@@ -14,7 +14,6 @@ const addMovie = async (driver) => {
 
 }
 
-
 const deleteMovie = async (driver) => {
     const movie = await driver.findElement(By.xpath(`//button[text()='x']`)).click()    
 }
@@ -24,9 +23,19 @@ const crossOffMovie = async (driver) => {
 }
 
 
+const revealMessage = async (driver) => {
+    const message = await driver.findElement(By.name(`aside`))
+
+    const displayed = message.isDisplayed()
+
+    expect(displayed).toBeTruthy();
+}
+
+
 
 module.exports = {
     addMovie,
     deleteMovie,
-    crossOffMovie
+    crossOffMovie,
+    revealMessage
 }

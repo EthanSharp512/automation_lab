@@ -25,7 +25,12 @@ test("Crosses off a movie", async () => {
     await driver.sleep(3000)
 })
 
+test("Reveal a message", async () => {
+    await revealMessage(driver)
+})
+
 test("Removes a movie", async () => {
     await deleteMovie(driver)
 })
+
 
